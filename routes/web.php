@@ -17,10 +17,12 @@ use App\Models\Produto;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('inicio');
+    $produtos = Produto::all();
+
+    return view('inicio', ["produtos" => $produtos]);
 });
 
-Route::post('/cadastrar', function(){
+Route::get('/cadastrar', function(){
     return view('cadastrar');
 });
 
@@ -33,14 +35,17 @@ Route::post('/cadastrar-produto', function(Request $request){
         'estoque' => $request->estoque
     ]);
 
-    echo "Produto criado com sucesso!";
+    return redirect('/');
 });
 
-Route::get('/listar-produto/{id}', function($id){
-    //dd(Produto::find($id)); //debug and die
+Route::get('/excluir-produto/{id}',function($id){
+    //dd($request->all());
     $produto = Produto::find($id);
-    return view('listar', ['produto' => $produto]);
+    $produto->delete();
+
+    return redirect('/');
 });
+
 
 Route::get('/editar-produto/{id}', function($id){
     //dd(Produto::find($id));
@@ -58,13 +63,5 @@ Route::post('/editar-produto/{id}', function(Request $request, $id){
         'estoque' => $request->estoque
     ]);
 
-    echo "Produto editado com sucesso!";
-});
-
-Route::get('/excluir-produto/{id}',function($id){
-    //dd($request->all());
-    $produto = Produto::find($id);
-    $produto->delete();
-
-    echo "Produto excluído com sucesso!";
+    return redirect('/');
 });
