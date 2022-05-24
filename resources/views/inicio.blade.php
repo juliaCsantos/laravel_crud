@@ -24,6 +24,16 @@
             @endforeach
     </ul>
     <a href="/cadastrar">Cadastrar</a>
+    <ul>
+        @foreach($fornecedors as $fornecedor)
+        <li>
+            {{$fornecedor->id}} |
+            {{$fornecedor->nome}} |
+            {{$fornecedor->telefone}} |
+            {{$fornecedor->produto}}
+        </li>
+        @endforeach
+    </ul>
 </body>
 
 <style>

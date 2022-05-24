@@ -10,4 +10,8 @@ class Produto extends Model
     use HasFactory;
 
     protected $fillable = ['nome', 'valor', 'estoque'];
+
+    public function post(){
+        return $this->belongsTo('App\Fornecedor', 'id','produto');
+    }
 }

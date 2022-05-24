@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +13,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Models\Produto;
+use App\Models\Fornecedor;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $produtos = Produto::all();
-
-    return view('inicio', ["produtos" => $produtos]);
+    $fornecedors = Fornecedor::all();
+    return view('inicio', [
+        "produtos" => $produtos,
+        'fornecedors' => $fornecedors
+    ]);
 });
 
 Route::get('/cadastrar', function(){
