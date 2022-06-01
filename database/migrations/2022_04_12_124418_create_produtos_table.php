@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('nome');
             $table->decimal('valor');
             $table->integer('estoque');
-            $table->integer('fornecedor_id')->unsigned();
+            $table->bigInteger('fornecedor_id')->unsigned();
             $table->timestamps();
-            $table->foreign('fornecedor_id')->references('id')->on('fornecedor')->onDelete('cascade');
+            $table->foreign('fornecedor_id')->references('id')->on('fornecedor');
         });
     }
 

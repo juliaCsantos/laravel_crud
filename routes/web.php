@@ -35,7 +35,8 @@ Route::post('/cadastrar-produto', function(Request $request){
     Produto::create([
         'nome' => $request->nome,
         'valor' => $request->valor,
-        'estoque' => $request->estoque
+        'estoque' => $request->estoque,
+        'fornecedor'=>$request->fornecedor_id
     ]);
 
     return redirect('/');
@@ -63,7 +64,8 @@ Route::post('/editar-produto/{id}', function(Request $request, $id){
     $produto->update([
         'nome' => $request->nome,
         'valor' => $request->valor,
-        'estoque' => $request->estoque
+        'estoque' => $request->estoque,
+        'forncedor' => $request->fornecedor_id
     ]);
 
     return redirect('/');

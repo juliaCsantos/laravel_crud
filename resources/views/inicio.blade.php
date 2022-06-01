@@ -17,6 +17,7 @@
                 {{$produto->nome}} |
                 {{$produto->valor}} |
                 {{$produto->estoque}} |
+                {{$produto->fornecedor_id}} |
                 
                 <a href="/excluir-produto/{{$produto->id}}">Excluir</a>
                 <a href="/editar-produto/{{$produto->id}}">Editar</a>
@@ -30,7 +31,6 @@
             {{$fornecedor->id}} |
             {{$fornecedor->nome}} |
             {{$fornecedor->telefone}} |
-            {{$fornecedor->produto}}
         </li>
         @endforeach
     </ul>
