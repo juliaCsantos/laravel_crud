@@ -20,7 +20,7 @@
         <input type="text" name="estoque" value="{{ $produto->estoque }}">
         <br><br>  
         <label for="lblFornecedor">Fornecedor:</label>
-        <input type="text" name="fornecedor" value="{{ $produto->fornecedor_id }}">
+        <input type="text" name="fornecedor_id" value="{{ $produto->fornecedor_id }}">
         <br><br>  
         <button>Cadastrar</button>
     </form>      

@@ -18,7 +18,7 @@
             <label for="lblQuantidade">Quantidade:</label>
             <input type="text" name="estoque">
             <label for="lblFornecedor">Fornecedor:</label>
-            <input type="text" name="fornecedor">
+            <input type="text" name="fornecedor_id">
             <br><br>
             <button>Enviar</button>
         </form>

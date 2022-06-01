@@ -9,7 +9,7 @@ class Produto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'valor', 'estoque'];
+    protected $fillable = ['nome', 'valor', 'estoque', 'fornecedor_id'];
 
     public function post(){
         return $this->belongsTo(Fornecedor::class);
